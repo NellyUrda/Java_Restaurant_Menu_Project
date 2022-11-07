@@ -46,12 +46,12 @@ public class PastaRestaurantWindow {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLayout(null);
 		frame.setSize(730, 400);
-		frame.getContentPane().setBackground(Color.DARK_GRAY);// sets the backround colour of the frame
+		frame.getContentPane().setBackground(Color.DARK_GRAY);
 		frame.setResizable(false);
 
 		titleLabel = new JLabel();
 		titleLabel.setText("PASTA RESTAURANT");
-		titleLabel.setFont(new Font("Calibri", Font.BOLD, 18));// sets the font and the size of the Label text
+		titleLabel.setFont(new Font("Calibri", Font.BOLD, 18));
 		titleLabel.setBounds(300, 0, 300, 50);
 		titleLabel.setForeground(Color.cyan);
 
@@ -171,7 +171,7 @@ public class PastaRestaurantWindow {
 		dessertLabel.setBounds(550, 15, 300, 50);
 		dessertLabel.setForeground(Color.LIGHT_GRAY);
 
-		calculateButton = new JButton("Pay");// calculate Button
+		calculateButton = new JButton("Pay");// Pay Button
 		calculateButton.setFocusable(false);
 		calculateButton.setBounds(210, 310, 100, 40);
 		calculateButton.setBackground(Color.cyan);
@@ -225,9 +225,9 @@ public class PastaRestaurantWindow {
 				double item4 = 0;
 
 				for (Entry<String, String> entry : pastaType.entrySet()) {
-					if (entry.getKey().equals(getSelectedButtonText(pastaGroup))) {// if a key from pastaType hashMap is
+					if (entry.getKey().equals(getSelectedButtonText(pastaGroup))) {
 																					// equal to the radioButton selected
-						String value1 = entry.getValue();// get the key value
+						String value1 = entry.getValue();// get the key value from entry
 						item1 = Double.parseDouble(value1);// convert it to double and sent it to item1
 					}
 				}
