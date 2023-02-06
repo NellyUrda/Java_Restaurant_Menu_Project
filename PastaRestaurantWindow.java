@@ -219,40 +219,41 @@ public class PastaRestaurantWindow {
 				dessert.put("icecream", "3.2");// we put the dessert items in dessert HashMap
 				dessert.put("tiramisu", "4.3");
 
-				double item1 = 0;
-				double item2 = 0;
-				double item3 = 0;
-				double item4 = 0;
+				double pasta_price = 0;
+				double salsa_price = 0;
+				double beverage_price = 0;
+				double dessert_price = 0;
 
 				for (Entry<String, String> entry : pastaType.entrySet()) {
 					if (entry.getKey().equals(getSelectedButtonText(pastaGroup))) {
-																					// equal to the radioButton selected
-						String value1 = entry.getValue();// get the key value from entry
-						item1 = Double.parseDouble(value1);// convert it to double and sent it to item1
+
+						String pasta = entry.getValue();// get the key value from entry
+						pasta_price = Double.parseDouble(pasta);// convert it to double and sent it to item1
 					}
 				}
 				for (Entry<String, String> entry : salsaType.entrySet()) {
 					if (entry.getKey().equals(getSelectedButtonText(salsaGroup))) {
-						String value2 = entry.getValue();
-						item2 = Double.parseDouble(value2);
+						String salsa = entry.getValue();
+						salsa_price = Double.parseDouble(salsa);
 					}
 				}
 				for (Entry<String, String> entry : beverage.entrySet()) {
 					if (entry.getKey().equals(getSelectedButtonText(beverageGroup))) {
-						String value3 = entry.getValue();
-						item3 = Double.parseDouble(value3);
+						String beverage = entry.getValue();
+						beverage_price = Double.parseDouble(beverage);
 					}
 				}
 				for (Entry<String, String> entry : dessert.entrySet()) {
 					if (entry.getKey().equals(getSelectedButtonText(dessertGroup))) {
-						String value4 = entry.getValue();
-						item4 = Double.parseDouble(value4);
+						String dessert = entry.getValue();
+						dessert_price = Double.parseDouble(dessert);
 					}
 				}
 				// calculate the total price of the selected items
-				JOptionPane.showMessageDialog(null,
-						"TOTAL price: \n" + calculateItems(item1, item2, item3, item4) + " euros", "Message",
-						JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(
+						null, "TOTAL price: \n"
+								+ calculateItems(pasta_price, salsa_price, beverage_price, dessert_price) + " euros",
+						"Message", JOptionPane.INFORMATION_MESSAGE);
 
 			}
 		});
@@ -276,7 +277,7 @@ public class PastaRestaurantWindow {
 		return null;
 	}
 
-	public double calculateItems(double item1, double item2, double item3, double item4) {
-		return item1 + item2 + item3 + item4;
+	public double calculateItems(double pasta_price, double salsa_price, double beverage_price, double dessert_price) {
+		return pasta_price + salsa_price + beverage_price + dessert_price;
 	}
 }
